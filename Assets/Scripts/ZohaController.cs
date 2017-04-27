@@ -8,6 +8,9 @@ public class ZohaController : MonoBehaviour {
 
 	private Rigidbody2D rb2d;
 	public float speed;
+	public Animator zohaAnim;
+	private Vector2 lastVelocity;
+	private Vector2 lastAcc;
 	private int count;
 	// public Text countText;
 	// public Text winText;
@@ -19,20 +22,37 @@ public class ZohaController : MonoBehaviour {
 		// winText.text = "";
 		// speed = 10.0f;
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		zohaAnim.SetBool("ZohaIdle",true);
+		lastVelocity = new Vector2(0,0);
 		
 	}
 
 	void FixedUpdate(){
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
+		
+		
 		// float moveHorizontal = Input.acceleration.x;
 		// float moveVertical = Input.acceleration.y;
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+		
 		rb2d.AddForce (movement * speed);
+
+		Vector2 acc = (rb2d.velocity - lastVelocity) / Time.deltaTime;
+
+		if(acc.magnitude > lastAcc.magnitude){
+			zohaAnim.SetBool("ZohaIdle",false);
+			zohaAnim.SetBool("ZohaRunning",true);
+		}
+		else if(acc.magnitude < lastAcc.magnitude){
+			zohaAnim.SetBool("ZohaIdle",true);
+			zohaAnim.SetBool("ZohaRunning",false);
+		}
+		lastVelocity = rb2d.velocity;
+		lastAcc = acc;
+		
 	}
-	/// <summary>
-	/// Update is called every frame, if the MonoBehaviour is enabled.
-	/// </summary>
+	
 	void Update()
 	{
 		 transform.up = rb2d.velocity;
