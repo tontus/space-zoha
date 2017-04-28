@@ -4,13 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ZohaController : MonoBehaviour {
+public class ZohaAlwaysRunningController : MonoBehaviour {
 
 	private Rigidbody2D rb2d;
 	public float speed;
-	public Animator zohaAnim;
-	private Vector2 lastVelocity;
-	private Vector2 lastAcc;
 	private int count;
 	// public Text countText;
 	// public Text winText;
@@ -22,8 +19,6 @@ public class ZohaController : MonoBehaviour {
 		// winText.text = "";
 		// speed = 10.0f;
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
-		zohaAnim.SetBool("ZohaIdle",true);
-		lastVelocity = new Vector2(0,0);
 		
 	}
 
@@ -36,20 +31,7 @@ public class ZohaController : MonoBehaviour {
 		// float moveVertical = Input.acceleration.y;
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 		
-		rb2d.AddForce (movement * speed);
-
-		Vector2 acc = (rb2d.velocity - lastVelocity) / Time.deltaTime;
-
-		if(acc.magnitude > lastAcc.magnitude){
-			zohaAnim.SetBool("ZohaIdle",false);
-			zohaAnim.SetBool("ZohaRunning",true);
-		}
-		else if(acc.magnitude < lastAcc.magnitude){
-			zohaAnim.SetBool("ZohaIdle",true);
-			zohaAnim.SetBool("ZohaRunning",false);
-		}
-		lastVelocity = rb2d.velocity;
-		lastAcc = acc;
+		rb2d.AddForce (movement * speed); 
 		
 	}
 	
@@ -60,7 +42,7 @@ public class ZohaController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Callectable")) {
+		if (other.gameObject.CompareTag ("Collectable")) {
 			Destroy(other.gameObject);
 			count++;
 			SetCountText ();
@@ -103,3 +85,4 @@ public class ZohaController : MonoBehaviour {
 //		}
 	}
 }
+
