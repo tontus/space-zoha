@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BlackHole
   - Collectable
+  - Obstacle
   layers:
   - Default
   - TransparentFX

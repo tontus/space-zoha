@@ -41,36 +41,36 @@ public class ZohaAlwaysRunningController : MonoBehaviour {
 		// transform.rotation = Quaternion.LookRotation(rb2d.velocity);
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Collectable")) {
-			Destroy(other.gameObject);
-			count++;
-			SetCountText ();
-		} 
-		if (other.gameObject.CompareTag ("BlackHole")) {
+	// void OnTriggerEnter2D(Collider2D other) {
+	// 	if (other.gameObject.CompareTag ("Collectable")) {
+	// 		Destroy(other.gameObject);
+	// 		count++;
+	// 		SetCountText ();
+	// 	} 
+	// 	if (other.gameObject.CompareTag ("BlackHole")) {
 			
-			// StartCoroutine(Example());
+	// 		// StartCoroutine(Example());
 			
-			gameObject.SetActive (false);
+	// 		gameObject.SetActive (false);
 		
 			
-			if (count >= 11){
-				// winText.color = Color.blue;
-				// winText.text = "You Win!!";
-				StoreHighscore(count);
+	// 		if (count >= 11){
+	// 			// winText.color = Color.blue;
+	// 			// winText.text = "You Win!!";
+	// 			StoreHighscore(count);
 
-			}
+	// 		}
 				
-			else{
-				// winText.color = Color.red;
-				// winText.text = "Game Over";
-				StoreHighscore(count);
-			}
+	// 		else{
+	// 			// winText.color = Color.red;
+	// 			// winText.text = "Game Over";
+	// 			StoreHighscore(count);
+	// 		}
 				
 			
 			
-		}
-	}
+	// 	}
+	// }
 
 	 void StoreHighscore(int newHighscore){
 		int oldHighscore = PlayerPrefs.GetInt("highscore", 0);    
