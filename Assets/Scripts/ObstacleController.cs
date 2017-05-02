@@ -10,7 +10,7 @@ public class ObstacleController : MonoBehaviour {
 	void Start () {
 		float probability = Random.Range(0.000001f,1);
 		float randomSize;
-		Debug.Log(probability);
+		// Debug.Log(probability);
 		if(probability <= .11){
 			randomSize = Random.Range(1.9f,3);
 			transform.localScale = new Vector3 (randomSize,randomSize,1);
