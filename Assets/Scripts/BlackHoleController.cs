@@ -15,16 +15,16 @@ public class BlackHoleController : MonoBehaviour {
 	IEnumerator OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.gameObject.CompareTag ("Player")){
+			Destroy(other.gameObject);
 			yield return new WaitForSeconds(2);
 			Debug.Log("done");
         // SceneManager.LoadScene("StartScene");
 		}
-	}
-	void OnTriggerEnter2D(Collision2D other){
-		if(other.gameObject.CompareTag ("Collectable") || other.gameObject.CompareTag ("BlackHole")){
+		else if(other.gameObject.CompareTag ("Collectable") || other.gameObject.CompareTag ("Obstacle")){
 			Destroy(other.gameObject);
 		}
 	}
+	
 
 	
 }

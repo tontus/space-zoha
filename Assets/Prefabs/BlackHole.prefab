@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4886863623763098}
   - component: {fileID: 58667374695082136}
+  - component: {fileID: 114707516437680086}
   m_Layer: 0
   m_Name: hole
   m_TagString: Untagged
@@ -38,7 +39,6 @@ GameObject:
   - component: {fileID: 212593461688960390}
   - component: {fileID: 95884129582577416}
   - component: {fileID: 58047179186461622}
-  - component: {fileID: 114569931050290540}
   - component: {fileID: 250408895824935310}
   m_Layer: 0
   m_Name: BlackHole
@@ -98,7 +98,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -121,12 +121,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114569931050290540
+--- !u!114 &114707516437680086
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1589799874669614}
+  m_GameObject: {fileID: 1172006110136368}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 875648bfcd4cdb848b5bd06531893321, type: 3}

@@ -5,7 +5,6 @@ using UnityEngine;
 public class RandomSpawnBlackhole : MonoBehaviour
 {
     public GameObject blackHole;
-    private int holeCount;
     private Vector3 spawnPoint;
     float sizeOfHoleWidth;
     float sizeOfHoleLength;
@@ -22,7 +21,7 @@ public class RandomSpawnBlackhole : MonoBehaviour
             // InvokeRepeating("SpawnHole", 1, .5f);
             SpawnHole();
         }
-		DestroyHole();
+		DestroyHole(all);
     }
 
 
@@ -58,10 +57,9 @@ public class RandomSpawnBlackhole : MonoBehaviour
         Instantiate(blackHole, spawnPoint, Quaternion.identity);
         CancelInvoke();
     }
-    void DestroyHole()
+    void DestroyHole(GameObject[] all)
     {
-        GameObject[] all;
-        all = GameObject.FindGameObjectsWithTag("BlackHole");
+        
         // while (i < all.Length)
         foreach (GameObject hole in all)
         {
