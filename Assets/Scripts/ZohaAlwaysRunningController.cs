@@ -8,13 +8,13 @@ public class ZohaAlwaysRunningController : MonoBehaviour {
 
 	private Rigidbody2D rb2d;
 	public float speed;
-	private int count;
+	// private int count;
 	// public Text countText;
 	// public Text winText;
 	
 	void Start(){
 		rb2d = GetComponent<Rigidbody2D> ();
-		count = 0;
+		// count = 0;
 		SetCountText ();
 		// winText.text = "";
 		// speed = 10.0f;
