@@ -8,7 +8,7 @@ public class ZohaAlwaysRunningController : MonoBehaviour {
 
 	private Rigidbody2D rb2d;
 	public float speed;
-	// private int count;
+	private int count;
 	// public Text countText;
 	// public Text winText;
 	
@@ -41,36 +41,19 @@ public class ZohaAlwaysRunningController : MonoBehaviour {
 		// transform.rotation = Quaternion.LookRotation(rb2d.velocity);
 	}
 
-	// void OnTriggerEnter2D(Collider2D other) {
-	// 	if (other.gameObject.CompareTag ("Collectable")) {
-	// 		Destroy(other.gameObject);
-	// 		count++;
-	// 		SetCountText ();
-	// 	} 
-	// 	if (other.gameObject.CompareTag ("BlackHole")) {
+	/// <summary>
+	/// Sent when an incoming collider makes contact with this object's
+	/// collider (2D physics only).
+	/// </summary>
+	/// <param name="other">The Collision2D data associated with this collision.</param>
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.CompareTag ("Collectable")) {
+			Destroy(other.transform.parent.gameObject);
+			count++;
 			
-	// 		// StartCoroutine(Example());
-			
-	// 		gameObject.SetActive (false);
-		
-			
-	// 		if (count >= 11){
-	// 			// winText.color = Color.blue;
-	// 			// winText.text = "You Win!!";
-	// 			StoreHighscore(count);
-
-	// 		}
-				
-	// 		else{
-	// 			// winText.color = Color.red;
-	// 			// winText.text = "Game Over";
-	// 			StoreHighscore(count);
-	// 		}
-				
-			
-			
-	// 	}
-	// }
+		} 
+	}
 
 	 void StoreHighscore(int newHighscore){
 		int oldHighscore = PlayerPrefs.GetInt("highscore", 0);    

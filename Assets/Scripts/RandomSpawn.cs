@@ -52,18 +52,18 @@ public class RandomSpawn : MonoBehaviour {
 		while(i < all.Length){
 			Vector3 pos = all[i].transform.position;
 			if (Mathf.Abs(transform.position.x - pos.x) > 50 || Mathf.Abs(transform.position.y - pos.y) > 30){
-				Destroy(all[i]);
+				Destroy(all[i].transform.parent.gameObject);
 			}
 			i++;
 		}
 	}
 	void SpawnObstacles(){
-		int collectableCount;
+		int obstacleCount;
 		GameObject[] all;
 		all = GameObject.FindGameObjectsWithTag("Obstacle");
 		int i = 0;
-		collectableCount = 8 - all.Length;
-		while(i<collectableCount){
+		obstacleCount = 5 - all.Length;
+		while(i<obstacleCount){
 			int x = Random.Range(-50,50);
 			int y = Random.Range(-30,30);
 			while(x > -37 && x < 37 && y > -18 && y < 18){
