@@ -20,7 +20,10 @@ public class BlackHoleController : MonoBehaviour {
 			Debug.Log("done");
         // SceneManager.LoadScene("StartScene");
 		}
-		else if(other.gameObject.CompareTag ("Collectable") || other.gameObject.CompareTag ("Obstacle")){
+		else if(other.gameObject.CompareTag ("Collectable")){
+			Destroy(other.transform.parent.gameObject);
+		}
+		else if (other.gameObject.CompareTag ("Obstacle")){
 			Destroy(other.gameObject);
 		}
 	}

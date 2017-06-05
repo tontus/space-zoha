@@ -16,7 +16,7 @@ public class RandomSpawnBlackhole : MonoBehaviour
     {
         GameObject[] all;
         all = GameObject.FindGameObjectsWithTag("BlackHole");
-        if (all.Length < 4)
+        if (all.Length < 3)
         {
             // InvokeRepeating("SpawnHole", 1, .5f);
             SpawnHole();

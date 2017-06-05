@@ -22,13 +22,42 @@ GameObject:
   - component: {fileID: 212329487306047998}
   - component: {fileID: 50753637669824862}
   - component: {fileID: 60064528072600382}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Juice Glass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1674360283461066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4194584410196618}
+  - component: {fileID: 60497327884449558}
+  m_Layer: 8
+  m_Name: trigger
   m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4194584410196618
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1674360283461066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4441715776966970}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4441715776966970
 Transform:
   m_ObjectHideFlags: 1
@@ -38,7 +67,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.1, y: 2.3, z: 0}
   m_LocalScale: {x: 1.311359, y: 1.311359, z: 1.311359}
-  m_Children: []
+  m_Children:
+  - {fileID: 4194584410196618}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,14 +79,14 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1302775558261450}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -68,6 +98,78 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1302775558261450}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.99, y: 2.45}
+    newSize: {x: 1.17, y: 2.15}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.375, y: -0.005}
+      - {x: 0.465, y: 0.005}
+      - {x: 0.525, y: 0.085}
+      - {x: 0.525, y: 0.155}
+      - {x: 0.465, y: 0.225}
+      - {x: 0.175, y: 0.355}
+      - {x: 0.074999996, y: 0.39499998}
+      - {x: 0.145, y: 0.53499997}
+      - {x: 0.195, y: 0.645}
+      - {x: 0.355, y: 1.005}
+      - {x: 0.405, y: 1.095}
+      - {x: 0.555, y: 1.015}
+      - {x: 0.755, y: 0.935}
+      - {x: 0.935, y: 0.85499996}
+      - {x: 0.965, y: 0.85499996}
+      - {x: 0.995, y: 0.875}
+      - {x: 0.995, y: 0.955}
+      - {x: 0.98499995, y: 0.97499996}
+      - {x: 0.91499996, y: 1.005}
+      - {x: 0.715, y: 1.095}
+      - {x: 0.60499996, y: 1.145}
+      - {x: 0.42499998, y: 1.225}
+      - {x: 0.315, y: 1.225}
+      - {x: 0.275, y: 1.165}
+      - {x: 0.195, y: 0.965}
+      - {x: 0.145, y: 0.85499996}
+      - {x: 0.085, y: 0.72499996}
+      - {x: 0.035, y: 0.615}
+      - {x: -0.035, y: 0.445}
+      - {x: -0.114999995, y: 0.48499998}
+      - {x: -0.315, y: 0.575}
+      - {x: -0.45499998, y: 0.635}
+      - {x: -0.545, y: 0.635}
+      - {x: -0.615, y: 0.585}
+      - {x: -0.625, y: 0.49499997}
+      - {x: -0.555, y: 0.42499998}
+      - {x: -0.695, y: -0.005}
+      - {x: -0.765, y: -0.205}
+      - {x: -0.78499997, y: -0.265}
+      - {x: -0.945, y: -0.73499995}
+      - {x: -0.995, y: -0.885}
+      - {x: -0.995, y: -0.98499995}
+      - {x: -0.825, y: -1.0649999}
+      - {x: -0.625, y: -1.145}
+      - {x: -0.445, y: -1.225}
+      - {x: -0.36499998, y: -1.225}
+      - {x: -0.235, y: -1.005}
+      - {x: 0.355, y: 0.015}
+--- !u!60 &60497327884449558
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1674360283461066}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
