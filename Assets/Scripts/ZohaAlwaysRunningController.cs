@@ -23,12 +23,12 @@ public class ZohaAlwaysRunningController : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		float moveHorizontal = Input.GetAxis("Horizontal");
-		float moveVertical = Input.GetAxis("Vertical");
+		// float moveHorizontal = Input.GetAxis("Horizontal");
+		// float moveVertical = Input.GetAxis("Vertical");
 		
 		
-		// float moveHorizontal = Input.acceleration.x;
-		// float moveVertical = Input.acceleration.y;
+		float moveHorizontal = Input.acceleration.x;
+		float moveVertical = Input.acceleration.y;
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 		
 		rb2d.AddForce (movement * speed); 

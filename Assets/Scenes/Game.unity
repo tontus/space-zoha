@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277465db1d39e3e43b27f36c1c2fd376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
 --- !u!50 &929978360
 Rigidbody2D:
   serializedVersion: 4
@@ -1090,6 +1090,11 @@ Prefab:
     - target: {fileID: 4832470592731116, guid: 463125ae26deb5345a04d2c6d01649d9, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 250408895824935310, guid: 463125ae26deb5345a04d2c6d01649d9,
+        type: 2}
+      propertyPath: m_ForceMagnitude
+      value: -100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 463125ae26deb5345a04d2c6d01649d9, type: 2}
