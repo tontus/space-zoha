@@ -840,11 +840,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4489595849072454, guid: a3c572e8961a7324aac0a19b499af341, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -20.8
+      value: -19.1
       objectReference: {fileID: 0}
     - target: {fileID: 4489595849072454, guid: a3c572e8961a7324aac0a19b499af341, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 12.2
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 4489595849072454, guid: a3c572e8961a7324aac0a19b499af341, type: 2}
       propertyPath: m_LocalPosition.z
@@ -953,6 +953,11 @@ Prefab:
     - target: {fileID: 4832470592731116, guid: 463125ae26deb5345a04d2c6d01649d9, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 250408895824935310, guid: 463125ae26deb5345a04d2c6d01649d9,
+        type: 2}
+      propertyPath: m_ForceMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 463125ae26deb5345a04d2c6d01649d9, type: 2}
@@ -1067,7 +1072,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2131104721}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a49cb41cf1ba5494f8650564d09aa639, type: 3}
   m_Name: 
@@ -1080,6 +1085,12 @@ MonoBehaviour:
   - {fileID: 1484037195103824, guid: 1baf33a05cd02074799747b9bc7c4118, type: 2}
   - {fileID: 1972255090794012, guid: 5dcf780b7e10e1a4c8634f4f3882fe1b, type: 2}
   - {fileID: 1278274593018936, guid: 91c9e5bf8166bec4885abffcfbbaea8a, type: 2}
+  obstacles:
+  - {fileID: 1784945716315732, guid: 51a92adbd6ff8c54281f0e1e9f7a6bfc, type: 2}
+  - {fileID: 1115344181127684, guid: 3277970dd7b11f244aaa6edba27aec8b, type: 2}
+  - {fileID: 1344139754263084, guid: d09dc8be7a1c7a7459bae86f7a89b18c, type: 2}
+  - {fileID: 1718502941473922, guid: a3c572e8961a7324aac0a19b499af341, type: 2}
+  - {fileID: 1384091817846034, guid: 32d8a67641d54464abab6d883db97093, type: 2}
 --- !u!114 &2131104729
 MonoBehaviour:
   m_ObjectHideFlags: 0
