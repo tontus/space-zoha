@@ -32,7 +32,7 @@ public class RandomSpawn : MonoBehaviour {
 		GameObject[] all;
 		all = GameObject.FindGameObjectsWithTag("Collectable");
 		int i = 0;
-		collectableCount = 15 - all.Length;
+		collectableCount = 20 - all.Length;
 		while(i<collectableCount){
 			int x = Random.Range(-50,50);
 			int y = Random.Range(-30,30);
