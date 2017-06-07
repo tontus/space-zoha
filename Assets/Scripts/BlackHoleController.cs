@@ -16,9 +16,9 @@ public class BlackHoleController : MonoBehaviour {
 	{
 		if(other.gameObject.CompareTag ("Player")){
 			Destroy(other.gameObject);
-			yield return new WaitForSeconds(2);
-			Debug.Log("done");
-        // SceneManager.LoadScene("StartScene");
+			yield return new WaitForSeconds(.5f);
+			
+        SceneManager.LoadScene("Game");
 		}
 		else if(other.gameObject.CompareTag ("Collectable")){
 			Destroy(other.transform.parent.gameObject);

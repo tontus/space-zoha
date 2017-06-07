@@ -14,6 +14,7 @@ public class ZohaAlwaysRunningController : MonoBehaviour {
 	
 	void Start(){
 		rb2d = GetComponent<Rigidbody2D> ();
+		// rb2d.centerOfMass = transform.GetChild (0).gameObject.transform.position;
 		// count = 0;
 		SetCountText ();
 		// winText.text = "";
@@ -23,12 +24,16 @@ public class ZohaAlwaysRunningController : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		float moveHorizontal = Input.GetAxis("Horizontal");
-		float moveVertical = Input.GetAxis("Vertical");
+		float moveHorizontal; 
+		float moveVertical; 
 		
-		
-		// float moveHorizontal = Input.acceleration.x;
-		// float moveVertical = Input.acceleration.y;
+
+		//for pc control
+		moveHorizontal = Input.GetAxis("Horizontal");
+		moveVertical = Input.GetAxis("Vertical");
+		//for sensor control
+		moveHorizontal = Input.acceleration.x;
+		moveVertical = Input.acceleration.y;
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 		
 		rb2d.AddForce (movement * speed); 
