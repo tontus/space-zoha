@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class ZohaAlwaysRunningController : MonoBehaviour {
 
@@ -34,6 +35,9 @@ public class ZohaAlwaysRunningController : MonoBehaviour {
 		//for sensor control
 		moveHorizontal = Input.acceleration.x;
 		moveVertical = Input.acceleration.y;
+		//for mobile controller 
+		moveHorizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+		moveVertical = CrossPlatformInputManager.GetAxis("Vertical");
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 		
 		rb2d.AddForce (movement * speed); 
