@@ -28,23 +28,23 @@ public class RandomSpawnBlackhole : MonoBehaviour
     void SpawnHole()
     {
 
-        spawnPoint.x = Random.Range(-50, 50);
-        spawnPoint.y = Random.Range(-30, 30);
+        spawnPoint.x = Random.Range(-70, 70);
+        spawnPoint.y = Random.Range(-40, 40);
         spawnPoint.z = 0;
-        while (spawnPoint.x > -37 && spawnPoint.x < 37 && spawnPoint.y > -18 && spawnPoint.y < 18)
+        if (spawnPoint.x > -47 && spawnPoint.x < 47 && spawnPoint.y > -28 && spawnPoint.y < 28)
         {
-            spawnPoint.x = Random.Range(-50, 50);
-            spawnPoint.y = Random.Range(-30, 30);
+           SpawnHole();
+           return;
         }
 		spawnPoint.x += transform.position.x;
 		spawnPoint.y += transform.position.y;
-        sizeOfHoleWidth = 20;
-        sizeOfHoleLength = 20;
+        sizeOfHoleWidth = 30;
+        sizeOfHoleLength = 30;
         foreach (Vector3 SpotTaken in SpotsTaken)
         {
-            if (spawnPoint.x >= SpotTaken.x - sizeOfHoleWidth && spawnPoint.x <= SpotTaken.x + sizeOfHoleWidth)
+            if ((spawnPoint.x >= SpotTaken.x - sizeOfHoleWidth && spawnPoint.x <= SpotTaken.x + sizeOfHoleWidth))
             {
-                if (spawnPoint.y >= SpotTaken.y - sizeOfHoleLength && spawnPoint.y <= SpotTaken.y + sizeOfHoleLength)
+                if ((spawnPoint.y >= SpotTaken.y - sizeOfHoleLength && spawnPoint.y <= SpotTaken.y + sizeOfHoleLength))
                 {
                     SpawnHole(); //If the width or length is near another one of these objects, then it tries again
                     return;
@@ -64,7 +64,7 @@ public class RandomSpawnBlackhole : MonoBehaviour
         foreach (GameObject hole in all)
         {
             Vector3 pos = hole.transform.position;
-            if (Mathf.Abs(transform.position.x - pos.x) > 50 || Mathf.Abs(transform.position.y - pos.y) > 30)
+            if (Mathf.Abs(transform.position.x - pos.x) > 70 || Mathf.Abs(transform.position.y - pos.y) > 40)
             {
 
                 SpotsTaken.Remove(pos);
