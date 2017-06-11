@@ -15,11 +15,8 @@ public class ZohaAlwaysRunningController : MonoBehaviour {
 	
 	void Start(){
 		rb2d = GetComponent<Rigidbody2D> ();
-		// rb2d.centerOfMass = transform.GetChild (0).gameObject.transform.position;
-		// count = 0;
+		
 		SetCountText ();
-		// winText.text = "";
-		// speed = 10.0f;
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		
 	}
