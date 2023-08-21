@@ -32,13 +32,13 @@ public class RandomSpawn : MonoBehaviour {
 		GameObject[] all;
 		all = GameObject.FindGameObjectsWithTag("Collectable");
 		int i = 0;
-		collectableCount = 20 - all.Length;
+		collectableCount = 45 - all.Length;
 		while(i<collectableCount){
-			int x = Random.Range(-50,50);
-			int y = Random.Range(-30,30);
-			while(x > -37 && x < 37 && y > -18 && y < 18){
-				x = Random.Range(-50,50);
-				y = Random.Range(-30,30);
+			int x = Random.Range(-100,100);
+			int y = Random.Range(-60,60);
+			while(x > -50 && x < 50 && y > -25 && y < 25){
+				x = Random.Range(-100,100);
+				y = Random.Range(-60,60);
 			}
 			Instantiate(collectables[Mathf.Abs(Random.Range(0,6))], new Vector3(transform.position.x + x, transform.position.y + y, 0), Quaternion.identity);
 			i++;
@@ -51,7 +51,7 @@ public class RandomSpawn : MonoBehaviour {
 		int i = 0;
 		while(i < all.Length){
 			Vector3 pos = all[i].transform.position;
-			if (Mathf.Abs(transform.position.x - pos.x) > 50 || Mathf.Abs(transform.position.y - pos.y) > 30){
+			if (Mathf.Abs(transform.position.x - pos.x) > 100 || Mathf.Abs(transform.position.y - pos.y) > 60){
 				Destroy(all[i].transform.parent.gameObject);
 			}
 			i++;
@@ -62,13 +62,13 @@ public class RandomSpawn : MonoBehaviour {
 		GameObject[] all;
 		all = GameObject.FindGameObjectsWithTag("Obstacle");
 		int i = 0;
-		obstacleCount = 5 - all.Length;
+		obstacleCount = 12 - all.Length;
 		while(i<obstacleCount){
-			int x = Random.Range(-50,50);
-			int y = Random.Range(-30,30);
-			while(x > -37 && x < 37 && y > -18 && y < 18){
-				x = Random.Range(-50,50);
-				y = Random.Range(-30,30);
+			int x = Random.Range(-100,100);
+			int y = Random.Range(-60,60);
+			while(x > -50 && x < 50 && y > -25 && y < 25){
+				x = Random.Range(-100,100);
+				y = Random.Range(-60,60);
 			}
 			Instantiate(obstacles[Mathf.Abs(Random.Range(0,4))], new Vector3(transform.position.x + x, transform.position.y + y, 0), Quaternion.identity);
 			i++;
@@ -81,7 +81,7 @@ public class RandomSpawn : MonoBehaviour {
 		int i = 0;
 		while(i < all.Length){
 			Vector3 pos = all[i].transform.position;
-			if (Mathf.Abs(transform.position.x - pos.x) > 50 || Mathf.Abs(transform.position.y - pos.y) > 30){
+			if (Mathf.Abs(transform.position.x - pos.x) > 100 || Mathf.Abs(transform.position.y - pos.y) > 60){
 				Destroy(all[i]);
 			}
 			i++;
